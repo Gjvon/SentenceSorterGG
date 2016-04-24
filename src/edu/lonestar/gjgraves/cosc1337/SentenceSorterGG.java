@@ -87,6 +87,8 @@ public class SentenceSorterGG {
 
 
     /**
+     * This method breaks down the array into two sublists
+     *
      * @param array
      * @param start
      * @param end
@@ -96,9 +98,11 @@ public class SentenceSorterGG {
         int pivotPoint;
 
         if (start < end) {
-            //partition array
+            //partition array and get the pivot point
             pivotPoint = partition(array, start, end);
+            //sublist 1
             doQuickSort(array, start, pivotPoint - 1);
+            //sublist 2
             doQuickSort(array, pivotPoint + 1, end);
         }
     }
